@@ -1,0 +1,30 @@
+﻿@using TeaDistributor.DTO
+
+@model IEnumerable<TeaItem>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>List of all teas</h2>
+
+@foreach (var item in Model) {
+    <div class="border border-1 border-dark p-2">
+        <h5>@item.Name</h5>
+        <p>Id: @item.Id</p>
+        <p>Type: @item.Type.Name</p>
+        <p>Region: @item.Region.Name</p>
+        <p>Quality: @item.Quality</p>
+        <p>Supplier: @item.Supplier.Name</p>
+        <p>Description: @item.Description</p>
+        <p>SteepingTime: @item.SteepingTime</p>
+        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+        <form method="post">
+            <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+        </form>
+    </div>
+}
+<hr />
+<div>
+    <a class="btn btn-success" asp-action="Create">Create</a>
+</div>
+

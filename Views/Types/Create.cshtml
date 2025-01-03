@@ -1,0 +1,22 @@
+﻿@using TeaDistributor.DTO
+
+@model TeaTypeDTO
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<h2>Create new type</h2>
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success" value="Create" />
+    </div>
+</form>
+
+
+

@@ -1,0 +1,34 @@
+﻿@using TeaDistributor.DTO
+
+@model TeaRegionDTO
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<h2>Edit region</h2>
+
+<form asp-action="Edit">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="District"></label>
+        <input asp-for="District" type="text" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" type="text" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Characteristics"></label>
+        <input asp-for="Characteristics" type="text" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success" value="Update" />
+    </div>
+</form>
+
+
+

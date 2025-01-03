@@ -1,0 +1,44 @@
+﻿@using TeaDistributor.DTO
+
+@model TeaItemDTO
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<h2>Create new tea item</h2>
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div>
+        <label class="control-label">Type</label>
+        <select class="form-control" asp-for="TypeId" asp-items="ViewBag.Types"></select>
+    </div>
+    <div>
+        <label class="control-label">Region</label>
+        <select class="form-control" asp-for="RegionId" asp-items="ViewBag.Regions"></select>
+    </div>
+    <div>
+        <label asp-for="Quality"></label>
+        <input asp-for="Quality" type="text" class="form-control" />
+    </div>
+    <div>
+        <label class="control-label">Supplier</label>
+        <select class="form-control" asp-for="SupplierId" asp-items="ViewBag.Suppliers"></select>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" type="text" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="SteepingTime"></label>
+        <input asp-for="SteepingTime" type="text" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success" value="Create" />
+    </div>
+</form>
+
