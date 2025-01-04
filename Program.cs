@@ -4,14 +4,20 @@ using TeaDistributor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://*:80", "https://*:443");
+//builder.WebHost.UseUrls("http://*:80", "https://*:443");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.AddDbContext<ApplicationDbContext>(opts =>
+//{
+//    opts.UseSqlServer(
+//        builder.Configuration["ConnectionStrings:TeaDbConnection"]
+//        );
+//});
 builder.Services.AddDbContext<ApplicationDbContext>(opts =>
 {
     opts.UseSqlServer(
-        builder.Configuration["ConnectionStrings:TeaDbConnection"]
+        builder.Configuration["ConnectionStrings:MonsterAspDbConnection"]
         );
 });
 
